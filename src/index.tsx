@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GlobalContext from "./helpers/global-context";
+import groupsData from "./resources/data/groups-data";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <GlobalContext.Provider value={groupsData}>
+        <App />
+      </GlobalContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
